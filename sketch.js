@@ -128,6 +128,11 @@ function draw() {
       gameOver.visible = true;
       restart.visible = true;
      
+      if(mousePressedOver(restart)) {
+      reset();
+    }
+
+     
      //change the trex animation
       trex.changeAnimation("collided", trex_collided);
     
@@ -148,11 +153,6 @@ function draw() {
  
   //stop trex from falling down
   trex.collide(invisibleGround);
-  
-  if(mousePressedOver(restart)) {
-      reset();
-    }
-
 
   drawSprites();
 }
